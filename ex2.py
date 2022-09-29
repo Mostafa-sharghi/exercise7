@@ -1,12 +1,15 @@
-name=input("enter names:",)
-name_set=set()
-while name !='':
-
-    name_set.add(name)
-    new_name=input("enter new new name:",)
-    if new_name not in name_set:
-        print("new name")
+names = set()
+ask_name = True
+while ask_name:
+    your_name = input("Enter a name: ").lower()
+    if len(your_name) == 0:
+        ask_name = False
     else:
-        print("exist name")
-    name=new_name
-print("the names are:" ,name_set)
+        if your_name in names:
+            print("Existing name")
+        else:
+            print("New name!")
+            names.add(your_name)
+
+for name in names:
+    print(name)
